@@ -1,14 +1,531 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <FrameLayout
+        android:id="@+id/frame_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent" />
 
-</FrameLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/logo" />
+
+            <View
+                android:id="@+id/headerLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#3B3A40" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="60dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Resultado do Cálculo"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView"
+                        android:layout_width="250dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="20dp"
+                        android:backgroundTint="#DAB9E3"
+                        app:cardCornerRadius="9dp"
+                        app:cardElevation="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                        tools:ignore="MissingConstraints">
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:padding="10dp"
+                            android:text="R$ 2.000,00"
+                            android:textColor="#272727"
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="70dp"
+                        android:padding="10dp"
+                        android:text="Áreas Cobertas no Plano:"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+
+                    <LinearLayout
+                        android:id="@+id/main"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        tools:layout_editor_absoluteX="82p"
+                        tools:layout_editor_absoluteY="101dp">
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="270dp"
+                                android:orientation="horizontal">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="250dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <androidx.cardview.widget.CardView
+                                            android:layout_width="100dp"
+                                            android:layout_height="100dp"
+                                            android:layout_gravity="center"
+                                            android:layout_margin="20dp"
+                                            android:backgroundTint="#E1D4E9"
+                                            app:cardCornerRadius="20dp"
+                                            app:cardElevation="10dp">
+
+                                            <ImageView
+                                                android:layout_width="90dp"
+                                                android:layout_height="90dp"
+                                                android:layout_gravity="center"
+                                                android:src="@drawable/cerebro" />
+
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:text="Neurológica"
+                                            android:textColor="#048A8F"
+                                            android:textSize="18dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:elegantTextHeight="true"
+                                            android:justificationMode="inter_word"
+                                            android:paddingHorizontal="15dp"
+                                            android:text="Trata as doenças que acometem o sistema nervoso central, nervos, nervos periféricos e músculos."
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginBottom="20dp"
+                                            android:elegantTextHeight="true"
+                                            android:inputType="textMultiLine"
+                                            android:justificationMode="inter_word"
+                                            android:lines="4"
+                                            android:paddingHorizontal="15dp"
+                                            android:text="•	Alzheimer\n•	Esclerose Múltipla\n•	AVC\n•	Parkinson"
+                                            android:textSize="12dp" />
+
+
+                                    </LinearLayout>
+
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="250dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="248dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <androidx.cardview.widget.CardView
+                                            android:layout_width="100dp"
+                                            android:layout_height="100dp"
+                                            android:layout_gravity="center"
+                                            android:layout_margin="20dp"
+                                            android:backgroundTint="#E1D4E9"
+                                            app:cardCornerRadius="20dp"
+                                            app:cardElevation="10dp">
+
+                                            <ImageView
+                                                android:layout_width="90dp"
+                                                android:layout_height="90dp"
+                                                android:layout_gravity="center"
+                                                android:src="@drawable/coracao" />
+
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:text="Cardiológica"
+                                            android:textColor="#048A8F"
+                                            android:textSize="18dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:elegantTextHeight="true"
+                                            android:justificationMode="inter_word"
+                                            android:paddingHorizontal="15dp"
+                                            android:text=" Trata do coração e vasos sanguíneos."
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginBottom="20dp"
+                                            android:elegantTextHeight="true"
+                                            android:inputType="textMultiLine"
+                                            android:justificationMode="inter_word"
+                                            android:lines="4"
+                                            android:paddingHorizontal="15dp"
+                                            android:text="•	Hipertensão\n•	Insuficiência Cardíaca\n•	Cardiopatia Congênita\n•	Arritimia Cardiaca"
+                                            android:textSize="12dp" />
+
+
+                                    </LinearLayout>
+
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="250dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <androidx.cardview.widget.CardView
+                                            android:layout_width="100dp"
+                                            android:layout_height="100dp"
+                                            android:layout_gravity="center"
+                                            android:layout_margin="20dp"
+                                            android:backgroundTint="#E1D4E9"
+                                            app:cardCornerRadius="20dp"
+                                            app:cardElevation="10dp">
+
+                                            <ImageView
+                                                android:layout_width="90dp"
+                                                android:layout_height="90dp"
+                                                android:layout_gravity="center"
+                                                android:src="@drawable/endocrino" />
+
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:text="Endocrinologia"
+                                            android:textColor="#048A8F"
+                                            android:textSize="18dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:elegantTextHeight="true"
+                                            android:justificationMode="inter_word"
+                                            android:paddingHorizontal="15dp"
+                                            android:text="Trata de hormônios e metabolismo."
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginBottom="20dp"
+                                            android:elegantTextHeight="true"
+                                            android:inputType="textMultiLine"
+                                            android:justificationMode="inter_word"
+                                            android:lines="5"
+                                            android:paddingHorizontal="15dp"
+                                            android:text="•	Diabetes\n•	Obesidade\n•	Doença de Tireóide\n•	Osteoporose\n•	Osteopenia"
+                                            android:textSize="12dp" />
+
+
+                                    </LinearLayout>
+
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="250dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <androidx.cardview.widget.CardView
+                                            android:layout_width="100dp"
+                                            android:layout_height="100dp"
+                                            android:layout_gravity="center"
+                                            android:layout_margin="20dp"
+                                            android:backgroundTint="#E1D4E9"
+                                            app:cardCornerRadius="20dp"
+                                            app:cardElevation="10dp">
+
+                                            <ImageView
+                                                android:layout_width="90dp"
+                                                android:layout_height="90dp"
+                                                android:layout_gravity="center"
+                                                android:src="@drawable/rins" />
+
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:text="Nefrologia"
+                                            android:textColor="#048A8F"
+                                            android:textSize="18dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:elegantTextHeight="true"
+                                            android:justificationMode="inter_word"
+                                            android:paddingHorizontal="15dp"
+                                            android:text="Trata o sistema renal e urinário. "
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginBottom="20dp"
+                                            android:elegantTextHeight="true"
+                                            android:inputType="textMultiLine"
+                                            android:justificationMode="inter_word"
+                                            android:lines="4"
+                                            android:paddingHorizontal="15dp"
+                                            android:text="•	Tumor\n•	Cistos\n•	Cálculo Renal\n•	Insuficiência Renal"
+                                            android:textSize="12dp" />
+
+
+                                    </LinearLayout>
+
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="250dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="20dp"
+                                    app:cardCornerRadius="20dp"
+                                    app:cardElevation="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical">
+
+                                        <androidx.cardview.widget.CardView
+                                            android:layout_width="100dp"
+                                            android:layout_height="100dp"
+                                            android:layout_gravity="center"
+                                            android:layout_margin="20dp"
+                                            android:backgroundTint="#E1D4E9"
+                                            app:cardCornerRadius="20dp"
+                                            app:cardElevation="10dp">
+
+                                            <ImageView
+                                                android:layout_width="90dp"
+                                                android:layout_height="90dp"
+                                                android:layout_gravity="center"
+                                                android:src="@drawable/cancer" />
+
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:text="Oncologia"
+                                            android:textColor="#048A8F"
+                                            android:textSize="18dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:elegantTextHeight="true"
+                                            android:justificationMode="inter_word"
+                                            android:paddingHorizontal="15dp"
+                                            android:text="Trata de tumores benignos ou malignos."
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginBottom="20dp"
+                                            android:elegantTextHeight="true"
+                                            android:inputType="textMultiLine"
+                                            android:justificationMode="inter_word"
+                                            android:lines="1"
+                                            android:paddingHorizontal="15dp"
+                                            android:text="•	Cânceres"
+                                            android:textSize="12dp" />
+
+
+                                    </LinearLayout>
+
+
+                                </androidx.cardview.widget.CardView>
+
+
+                            </LinearLayout>
+
+
+                        </HorizontalScrollView>
+
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemIconSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
