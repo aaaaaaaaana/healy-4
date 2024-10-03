@@ -3,7 +3,6 @@
 ˖°🩺♡ ***Seu plano de saúde personalizado*** ﮩ٨ـﮩﮩ٨ـ˖𓍢ִ໋ 
 
 <br>
-<br>
 
 # Integrantes
     RM: 551401 Turma: 2TDSPF Nome: Ana Luiza Fontes Franco
