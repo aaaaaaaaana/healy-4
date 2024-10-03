@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Healy" parent="Theme.Material3.DayNight.NoActionBar">
+
+
+        <item name="colorPrimary">@color/primario</item>
+        <item name="colorPrimaryVariant">@color/primario</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <item name="colorSecondary">@color/secundario</item>
+        <item name="colorSecondaryVariant">@color/secundario</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+
+
+    <style name="fundo">
+        <item name="android:background">#141218</item>
+    </style>
+
+    <style name="icon" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="android:backgroundTint">#048A8F</item>
+        <item name="tint">#cac4d0</item>
+    </style>
+
+</resources>
