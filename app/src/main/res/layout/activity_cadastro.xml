@@ -6,7 +6,6 @@
     style="@style/fundo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6EB8BA"
     android:theme="@style/Theme.Healy"
     tools:context=".Home">
 
@@ -38,8 +37,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="54dp"
-        android:layout_height="52dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
@@ -53,13 +52,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="Seja Bem-Vindo"
-        android:textColor="#FFFFFF"
-        android:textSize="32dp"
+        android:textColor="#36939a"
+        android:textSize="27sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"/>
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
 
     <TextView
@@ -68,27 +67,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Cadastra-se para continuar"
-        android:textColor="#FFFFFF"
-        android:textSize="16dp"
+        android:textColor="#36939a"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo" />
 
+
     <LinearLayout
-        android:id="@+id/card"
-        style="@style/fundo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="300dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="-12dp">
-
+        android:orientation="horizontal">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -98,188 +89,237 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/emailEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="40dp"
-                    android:text="Digite seu E-mail"
-                    android:textColor="@color/primario"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/user"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/caixa_edittxt"
-                    android:drawablePadding="8dp"
-                    android:hint="Email"
-                    android:imeOptions="actionDone"
-                    android:inputType="textEmailAddress"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/userEscrita"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="40dp"
-                    android:text="Crie um user"
-                    android:textColor="@color/primario"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="10dp">
 
-                <EditText
-                    android:id="@+id/email"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/caixa_edittxt"
-                    android:drawablePadding="8dp"
-                    android:hint="User"
-                    android:imeOptions="actionDone"
-                    android:inputType="textEmailAddress"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/nomeEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Digite seu nome completo"
-                    android:textColor="@color/primario"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/nome"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/caixa_edittxt"
-                    android:drawablePadding="8dp"
-                    android:hint="Nome completo"
-                    android:imeOptions="actionDone"
-                    android:inputType="text"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/cpfEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Digite seu cpf"
-                    android:textColor="@color/primario"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/cpf"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/caixa_edittxt"
-                    android:drawablePadding="8dp"
-                    android:hint="Cpf"
-                    android:imeOptions="actionDone"
-                    android:inputType="text"
-                    android:padding="8dp" />
-
-                <TextView
-                    android:id="@+id/criaSenhaEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Crie uma senha(min. 8 caracteres):"
-                    android:textColor="@color/primario"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColorHint="#99959B"
-                    app:hintAnimationEnabled="false"
-                    app:passwordToggleEnabled="true">
-
-
-
-
-
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/senha"
+                    <EditText
+                        android:id="@+id/email"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="55dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginHorizontal="35dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/caixa_edittxt"
                         android:drawablePadding="8dp"
-                        android:hint="Senha"
+                        android:autofillHints=""
                         android:imeOptions="actionDone"
-                        android:inputType="textPassword"
-                        android:padding="8dp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="20dp"
+                        android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/confirmaSenhaEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Confirme a Senha:"
-                    android:textColor="@color/primario"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/emailEscrita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Digite um email:"
+                        android:textColor="#36939a"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColorHint="#99959B"
-                    app:hintAnimationEnabled="false"
-                    app:passwordToggleEnabled="true">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
 
-
-
-
-
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/confirmaSenha"
+                    <EditText
+                        android:id="@+id/user"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="55dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginHorizontal="35dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/caixa_edittxt"
                         android:drawablePadding="8dp"
-                        android:hint="Confirmar Senha"
+                        android:autofillHints=""
                         android:imeOptions="actionDone"
-                        android:inputType="textPassword"
-                        android:padding="8dp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="20dp"
+                        android:textSize="14sp"
+                        tools:ignore="LabelFor" />
 
+                    <TextView
+                        android:id="@+id/userEscrita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Crie um user:"
+                        android:textColor="#36939a"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/nome"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginTop="10dp"
+                        android:autofillHints=""
+                        android:background="@drawable/caixa_edittxt"
+                        android:drawablePadding="8dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="20dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/nomeEscrita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Crie um nome:"
+                        android:textColor="#36939a"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/cpf"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/caixa_edittxt"
+                        android:drawablePadding="8dp"
+                        android:autofillHints=""
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="20dp"
+                        android:textSize="14sp"
+                        tools:ignore="LabelFor" />
+
+                    <TextView
+                        android:id="@+id/cpfEscrita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Digite seu CPF:"
+                        android:textColor="#36939a"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColorHint="#99959B"
+                        app:hintAnimationEnabled="false"
+                        app:passwordToggleEnabled="true">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/senha"
+                            android:layout_width="match_parent"
+                            android:layout_height="57dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="35dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/caixa_edittxt"
+                            android:drawablePadding="8dp"
+                            android:hint=""
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:padding="8dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/senhaEscrita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Crie uma senha(min. 8 caracteres):"
+                        android:textColor="#36939a"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColorHint="#99959B"
+                        app:hintAnimationEnabled="false"
+                        app:passwordToggleEnabled="true">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/confirmaSenha"
+                            android:layout_width="match_parent"
+                            android:layout_height="57dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="35dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/caixa_edittxt"
+                            android:drawablePadding="8dp"
+                            android:hint=""
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:padding="8dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/confirmaSenhaEscrita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Confirme a senha:"
+                        android:textColor="#36939a"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
 
                 <Button
                     android:id="@+id/botaoCadastro"
@@ -288,7 +328,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginHorizontal="35dp"
                     android:layout_marginTop="30dp"
-                    android:backgroundTint="@color/primario"
+                    android:backgroundTint="#36939a"
                     android:text="Cadastrar"
                     android:textSize="18sp"
                     android:visibility="visible"
@@ -305,14 +345,13 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:text="Já possui login? Clique aqui para logar"
-                    android:textColor="@color/primario"
+                    android:textColor="#36939a"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:visibility="visible" />
             </LinearLayout>
         </ScrollView>
-
-
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
