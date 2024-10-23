@@ -18,6 +18,7 @@
         app:layout_constraintEnd_toStartOf="@+id/florMaior"
         app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
+        android:alpha="0.4"
         app:layout_constraintTop_toBottomOf="@+id/titulo"
         app:layout_constraintVertical_bias="0.084"
         app:srcCompat="@drawable/flor" />
@@ -29,6 +30,7 @@
         android:layout_marginVertical="2dp"
         android:layout_marginEnd="16dp"
         android:rotation="36"
+        android:alpha="0.4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -88,7 +90,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="160dp"
                 android:orientation="vertical">
 
                 <FrameLayout
