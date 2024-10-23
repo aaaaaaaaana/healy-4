@@ -16,10 +16,10 @@
         android:rotation="-36"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/florMaior"
-        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo"
-        app:layout_constraintVertical_bias="0.084"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/flor" />
 
     <ImageView
@@ -32,7 +32,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22"
+        app:layout_constraintVertical_bias="0.095"
         app:srcCompat="@drawable/flor" />
 
     <ImageView
@@ -81,7 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="220dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -98,78 +98,97 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/userEscrita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="20dp"
-                    android:imeOptions="actionDone"
-                    android:inputType="text"
-                    android:text="User"
-                    android:textColor="@color/primario"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/user"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/caixa_edittxt"
-                    android:drawablePadding="8dp"
-                    android:hint="User"
-                    android:imeOptions="actionDone"
-                    android:padding="8dp" />
-
-
-                <TextView
-                    android:id="@+id/senhaEscrita"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginHorizontal="35dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Senha"
-                    android:textColor="@color/primario"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="10dp">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColorHint="#A6A4A5"
-                    app:passwordToggleEnabled="true">
-
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/senha"
+                    <EditText
+                        android:id="@+id/email"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="55dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginHorizontal="40dp"
                         android:layout_marginTop="10dp"
+                        android:autofillHints=""
                         android:background="@drawable/caixa_edittxt"
                         android:drawablePadding="8dp"
-                        android:hint="Senha"
                         android:imeOptions="actionDone"
-                        android:inputType="textPassword"
-                        android:padding="8dp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="20dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/emailEscrita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Email:"
+                        android:textColor="#36939a"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColorHint="#99959B"
+                        app:hintAnimationEnabled="false"
+                        app:passwordToggleEnabled="true">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/senha"
+                            android:layout_width="match_parent"
+                            android:layout_height="57dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/caixa_edittxt"
+                            android:drawablePadding="8dp"
+                            android:hint=""
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:padding="8dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/senhaEscrita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Senha:"
+                        android:textColor="#36939a"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
 
 
                 <Button
-                    android:id="@+id/botaoLogin"
+                    android:id="@+id/botaoCadastro"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginHorizontal="40dp"
                     android:layout_marginTop="30dp"
-                    android:backgroundTint="@color/primario"
-                    android:text="Login"
+                    android:backgroundTint="#36939a"
+                    android:text="Logar"
                     android:textSize="18sp"
+                    android:visibility="visible"
                     app:cornerRadius="20dp" />
 
                 <TextView
@@ -182,8 +201,9 @@
                     android:layout_marginBottom="60dp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:textAlignment="center"
                     android:text="Não possui cadastro? Clique aqui para se cadastrar"
-                    android:textColor="@color/primario"
+                    android:textColor="#36939a"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
