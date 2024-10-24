@@ -16,22 +16,50 @@ import com.bma.healy.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
 
-    private lateinit var botaoLogin: Button
+
+    private lateinit var binding: ActivityMainBinding
+
+    lateinit var username: EditText
+    lateinit var password: EditText
+    lateinit var loginButton: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
 
-        botaoLogin = findViewById(R.id.botaoLogin)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
-        showFragment(ListaFragment())
+        binding.botaoLogin.setOnClickListener(View.OnClickListener {
+            if(binding.email.text.toString() == "user" && binding.senha.text.toString() == "1234"){
+                Toast.makeText(this, "Logado com Sucesso", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Falha no Login", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+
+        var linkLogin: TextView = findViewById(R.id.linkLogin)
+
+        var botaoLogin: TextView = findViewById(R.id.botaoLogin)
+
+
+        // adicionar evento do clique
+        linkLogin.setOnClickListener {
+
+            var intent = Intent(this, Cadastro::class.java)
+
+            startActivity(intent)
+        }
 
         botaoLogin.setOnClickListener {
-            showFragment(CadastroFragment())
-        }
-    }
 
+            var intent = Intent(this, Home::class.java)
+
+            startActivity(intent)
+        }
+
+
+    }
 }

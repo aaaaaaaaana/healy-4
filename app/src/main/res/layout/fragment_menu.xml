@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/btnCadastro"
+            android:id="@+id/btnFormulario"
             android:layout_width="29dp"
             android:layout_height="29dp"
             android:layout_marginEnd="50dp"
@@ -54,7 +54,7 @@
             android:text="" />
 
         <ImageView
-            android:id="@+id/btnLista"
+            android:id="@+id/btnPerfil"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="90dp"

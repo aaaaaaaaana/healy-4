@@ -106,7 +106,7 @@
                     <EditText
                         android:id="@+id/email"
                         android:layout_width="match_parent"
-                        android:layout_height="55dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginHorizontal="40dp"
                         android:layout_marginTop="10dp"
@@ -115,9 +115,12 @@
                         android:drawablePadding="8dp"
                         android:imeOptions="actionDone"
                         android:inputType="textEmailAddress"
-                        android:paddingHorizontal="8dp"
-                        android:paddingTop="20dp"
-                        android:textSize="14sp" />
+                        android:paddingHorizontal="10dp"
+                        android:paddingTop="30dp"
+                        android:paddingBottom="7dp"
+                        android:textCursorDrawable="@color/primario"
+                        android:cursorVisible="true"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/emailEscrita"
@@ -128,7 +131,7 @@
                         android:layout_marginTop="15dp"
                         android:text="Email:"
                         android:textColor="#36939a"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
                 </FrameLayout>
 
@@ -136,7 +139,7 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="20dp">
 
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -150,16 +153,21 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/senha"
                             android:layout_width="match_parent"
-                            android:layout_height="57dp"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginHorizontal="40dp"
                             android:layout_marginTop="10dp"
                             android:background="@drawable/caixa_edittxt"
-                            android:drawablePadding="8dp"
+                            android:paddingTop="30dp"
+                            android:paddingBottom="7dp"
                             android:hint=""
+                            android:gravity="bottom|start"
+                            android:paddingStart="11dp"
+                            android:paddingEnd="5dp"
                             android:imeOptions="actionDone"
                             android:inputType="textPassword"
-                            android:padding="8dp" />
+                            android:textSize="18sp"
+                            />
                     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -172,7 +180,7 @@
                         android:layout_marginTop="10dp"
                         android:text="Senha:"
                         android:textColor="#36939a"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                 </FrameLayout>
@@ -201,8 +209,8 @@
                     android:layout_marginBottom="60dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:textAlignment="center"
                     android:text="Não possui cadastro? Clique aqui para se cadastrar"
+                    android:textAlignment="center"
                     android:textColor="#36939a"
                     android:textSize="14sp"
                     android:textStyle="bold" />

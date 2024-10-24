@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="200dp"
-                    android:text="Snoopy Paciente"
+                    android:text="@string/snoopy_paciente"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
