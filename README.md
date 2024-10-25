@@ -1,4 +1,4 @@
-225254# HEALY <img align="center" alt="logo1" height=40  width=40 src="documentacao/logo.png" />
+# HEALY <img align="center" alt="logo1" height=40  width=40 src="documentacao/logo.png" />
 
 ˖°🩺♡ ***Seu plano de saúde personalizado*** ﮩ٨ـﮩﮩ٨ـ˖𓍢ִ໋ 
 
