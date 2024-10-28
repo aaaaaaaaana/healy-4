@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         botaoLogin.setOnClickListener {
 
-            var intent = Intent(this, Home::class.java)
+            var intent = Intent(this, Menu::class.java)
 
             startActivity(intent)
         }

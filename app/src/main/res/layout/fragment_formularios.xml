@@ -10,6 +10,7 @@
     tools:context=".Perfil">
 
     <FrameLayout
+        android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -29,6 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="80dp"
         android:background="#3B3A40"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,18 +39,18 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="30dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="60dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerLine">
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="80dp">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="15dp"
                     android:text="Formulário"
                     android:textSize="20sp"
@@ -601,6 +603,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="32dp"
+                    android:layout_marginBottom="25dp"
                     android:text="Registrar" />
 
             </LinearLayout>
