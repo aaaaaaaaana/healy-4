@@ -2,6 +2,7 @@ package com.bma.healy
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,13 +17,13 @@ class Cadastro : AppCompatActivity() {
         setContentView(R.layout.fragment_cadastro)
 
 
-        var linkCadastro: TextView  = findViewById(R.id.linkCadastro)
+        var linkCadastro: TextView = findViewById(R.id.linkCadastro)
 
-        var botaoCadastro: TextView = findViewById(R.id.botaoCadastro)
+        var botaoCadastro: Button = findViewById(R.id.botaoCadastro)
 
 
         // adicionar evento do clique
-        linkCadastro.setOnClickListener{
+        linkCadastro.setOnClickListener {
 
             var intent = Intent(this, MainActivity::class.java)
 
@@ -30,7 +31,7 @@ class Cadastro : AppCompatActivity() {
 
         }
 
-        botaoCadastro.setOnClickListener{
+        botaoCadastro.setOnClickListener {
 
             var intent = Intent(this, MainActivity::class.java)
 

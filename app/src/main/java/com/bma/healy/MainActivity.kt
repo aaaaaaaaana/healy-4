@@ -15,8 +15,6 @@ import com.bma.healy.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-
-
     private lateinit var binding: ActivityMainBinding
 
     lateinit var username: EditText
