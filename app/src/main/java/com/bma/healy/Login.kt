@@ -27,7 +27,7 @@ class Login : AppCompatActivity() {
         }
 
         linkLogin.setOnClickListener {
-            showFragment(Cadastro())
+            showFragment(Cadastr())
         }
     }
 
