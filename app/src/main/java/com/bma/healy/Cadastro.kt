@@ -1,41 +1,39 @@
 package com.bma.healy
 
-import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 
-class Cadastro : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.fragment_cadastro)
+class Cadastro : Fragment() {
 
 
-        var linkCadastro: TextView = findViewById(R.id.linkCadastro)
+    private lateinit var linkCadastro: TextView
+    private lateinit var botaoCadastro: Button
 
-        var botaoCadastro: Button = findViewById(R.id.botaoCadastro)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_cadastro, container, false)
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        // adicionar evento do clique
+        linkCadastro = view.findViewById(R.id.linkCadastro)
+        botaoCadastro = view.findViewById(R.id.botaoCadastro)
+
         linkCadastro.setOnClickListener {
-
-            var intent = Intent(this, MainActivity::class.java)
-
-            startActivity(intent)
-
+            (activity as MainActivity).showFragment(Login())
         }
 
         botaoCadastro.setOnClickListener {
-
-            var intent = Intent(this, MainActivity::class.java)
-
-            startActivity(intent)
+            (activity as MainActivity).showFragment(Login())
         }
     }
 }
