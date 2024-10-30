@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:padding="15dp"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -44,7 +44,7 @@
             android:id="@+id/btnResultado"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginStart="40dp"
             android:background="@drawable/resultado"
             android:cropToPadding="true"

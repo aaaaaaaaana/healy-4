@@ -107,7 +107,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="48dp"
                 android:gravity="start"
-                android:text="Formulários Preenchido"
+                android:text="Formulários Preenchidos"
                 android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
