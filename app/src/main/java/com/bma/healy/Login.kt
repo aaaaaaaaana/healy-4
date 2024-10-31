@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 
 class Login : Fragment() {
     private lateinit var linkLogin: TextView
+    private lateinit var linkEsqueceuSenha: TextView
     private lateinit var botaoLogin: Button
 
     override fun onCreateView(
@@ -26,10 +27,15 @@ class Login : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         linkLogin = view.findViewById(R.id.linkLogin)
+        linkEsqueceuSenha = view.findViewById(R.id.esqueceuLogin)
         botaoLogin = view.findViewById(R.id.botaoLogin)
 
         linkLogin.setOnClickListener {
             (activity as MainActivity).showFragment(Cadastro())
+        }
+
+        linkEsqueceuSenha.setOnClickListener {
+            (activity as MainActivity).showFragment(EsqueceuSenha())
         }
 
         botaoLogin.setOnClickListener {

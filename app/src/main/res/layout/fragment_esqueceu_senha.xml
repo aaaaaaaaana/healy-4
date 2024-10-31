@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Cadastro">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/logo" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="130dp"
+            android:text="Seja Bem-Vindo"
+            android:textColor="#36939a"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subtitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="Redefina sua senha"
+            android:textColor="#36939a"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/florMenor"
+            android:layout_width="86dp"
+            android:layout_height="122dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="158dp"
+            android:alpha="0.4"
+            android:rotation="-55"
+            app:srcCompat="@drawable/flor" />
+
+        <ImageView
+            android:id="@+id/florMaior"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="87dp"
+            android:layout_weight="1"
+            android:alpha="0.4"
+            android:rotation="36"
+            app:srcCompat="@drawable/flor" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="160dp"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginHorizontal="40dp"
+                        android:layout_marginTop="10dp"
+                        android:autofillHints=""
+                        android:background="@drawable/caixa_edittxt"
+                        android:cursorVisible="true"
+                        android:drawablePadding="8dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+
+                        android:paddingHorizontal="10dp"
+                        android:paddingTop="30dp"
+                        android:paddingBottom="7dp"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/emailEscrita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Digite seu email:"
+                        android:textColor="#36939a"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColorHint="#99959B"
+                        app:hintAnimationEnabled="false"
+                        app:passwordToggleEnabled="true">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/senha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/caixa_edittxt"
+                            android:drawablePadding="8dp"
+                            android:hint=""
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:paddingStart="11dp"
+                            android:paddingTop="30dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="7dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/senhaEscrita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Crie uma nova senha(min. 8 caracteres):"
+                        android:textColor="#36939a"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColorHint="#99959B"
+                        app:hintAnimationEnabled="false"
+                        app:passwordToggleEnabled="true">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/confirmaSenha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/caixa_edittxt"
+                            android:drawablePadding="8dp"
+                            android:hint=""
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:paddingStart="11dp"
+                            android:paddingTop="30dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="7dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/confirmaSenhaEscrita"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Confirme a senha:"
+                        android:textColor="#36939a"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/botaoRedefinir"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="#36939a"
+                    android:text="Redefinir"
+                    android:textSize="18sp"
+                    android:visibility="visible"
+                    app:cornerRadius="20dp" />
+
+                <TextView
+                    android:id="@+id/linkEsqueceu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="60dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="Já possui login? Clique aqui para logar"
+                    android:textColor="#36939a"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,6 @@
 
     <color name="primario">#6EB8BA</color>
     <color name="secundario">#FBF9F7</color>
+    <color name="terciaria">#36939a</color>
+
 </resources>
