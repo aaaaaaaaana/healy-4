@@ -2,22 +2,21 @@ package com.bma.healy
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bma.healy.model.Formulario
-import com.google.gson.Gson // Import Gson
+import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.launch
@@ -25,12 +24,12 @@ import java.lang.reflect.Type
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-
-const val DATASTORE_NAME = "formulario_datastore"
-val FORMULARIO_KEY = stringPreferencesKey("formulario_data")
-val FORMULARIO_DADOS_KEY = stringPreferencesKey("formulario_dados")
-
 class Formularios : Fragment() {
+
+    val DATASTORE_NAME = "formulario_datastore"
+    val FORMULARIO_KEY = stringPreferencesKey("formulario_data")
+    val FORMULARIO_DADOS_KEY = stringPreferencesKey("formulario_dados")
+
     private lateinit var idade: EditText
     private lateinit var genero: EditText
     private lateinit var altura: EditText
@@ -46,7 +45,6 @@ class Formularios : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var formularioAdapter: FormularioAdapter
-
 
     private val Context.dataStore by preferencesDataStore(
         name = DATASTORE_NAME
@@ -122,7 +120,7 @@ class Formularios : Fragment() {
                 val gson = Gson()
                 var formularios: MutableList<Formulario> =
                     try {
-                        gson.fromJson(preferences[FORMULARIO_KEY], object : TypeToken<List<Formulario>>() {}.type)
+                        gson.fromJson(preferences[FORMULARIO_DADOS_KEY], object : TypeToken<List<Formulario>>() {}.type)
                     } catch (e: JsonSyntaxException) {
                         mutableListOf()
                     }
@@ -132,6 +130,7 @@ class Formularios : Fragment() {
             }
         }
     }
+
     private fun loadFormularios() {
         lifecycleScope.launch {
             requireContext().dataStore.data.collect { preferences ->
@@ -149,5 +148,4 @@ class Formularios : Fragment() {
             }
         }
     }
-
 }

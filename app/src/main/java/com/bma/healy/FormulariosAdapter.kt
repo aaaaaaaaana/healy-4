@@ -1,16 +1,10 @@
 package com.bma.healy
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import com.bma.healy.FormularioViewHolder.FormularioViewHolder
-
-
+import androidx.recyclerview.widget.RecyclerView
 import com.bma.healy.databinding.FragmentItemBinding
 import com.bma.healy.model.Formulario
-
 
 class FormularioAdapter : RecyclerView.Adapter<FormularioAdapter.FormularioViewHolder>() {
 
@@ -22,43 +16,33 @@ class FormularioAdapter : RecyclerView.Adapter<FormularioAdapter.FormularioViewH
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FormularioViewHolder {
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.fragment_item, parent, false)
-        return FormularioViewHolder(view)
+        val binding = FragmentItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return FormularioViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: FormularioViewHolder, position: Int) {
         val formulario = formularios[position]
-        holder.formularioTextView.text = "Preenchido em: ${formulario.data}"
-        holder.idadeTextView.text = "Idade: ${formulario.idade}"
-        holder.generoTextView.text = "Gênero: ${formulario.genero}"
-        holder.alturaTextView.text = "Altura: ${formulario.altura}"
-        holder.pesoTextView.text = "Peso: ${formulario.peso}"
-        holder.civilTextView.text = "Estado Civil: ${formulario.civil}"
-        holder.paisTextView.text = "País: ${formulario.pais}"
-        holder.fumaTextView.text = "Fuma: ${formulario.fuma}"
-        holder.bebeTextView.text = "Bebe: ${formulario.bebe}"
-        holder.alergiaTextView.text = "Alergia: ${formulario.alergia}"
-        holder.medicamentoTextView.text = "Medicamento: ${formulario.medicamento}"
-        holder.historicoTextView.text = "Histórico: ${formulario.historico}"
+        holder.bind(formulario)
     }
 
     override fun getItemCount(): Int {
         return formularios.size
     }
 
-    class FormularioViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val formularioTextView: TextView = itemView.findViewById(R.id.formulario)
-        val idadeTextView: TextView = itemView.findViewById(R.id.idade)
-        val generoTextView: TextView = itemView.findViewById(R.id.genero)
-        val alturaTextView: TextView = itemView.findViewById(R.id.altura)
-        val pesoTextView: TextView = itemView.findViewById(R.id.peso)
-        val civilTextView: TextView = itemView.findViewById(R.id.civil)
-        val paisTextView: TextView = itemView.findViewById(R.id.pais)
-        val fumaTextView: TextView = itemView.findViewById(R.id.fuma)
-        val bebeTextView: TextView = itemView.findViewById(R.id.bebe)
-        val alergiaTextView: TextView = itemView.findViewById(R.id.alergia)
-        val medicamentoTextView: TextView = itemView.findViewById(R.id.medicamento)
-        val historicoTextView: TextView = itemView.findViewById(R.id.historico)
+    class FormularioViewHolder(private val binding: FragmentItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(formulario: Formulario) {
+            binding.formulario.text = "Preenchido em: ${formulario.data}"
+            binding.idade.setText(formulario.idade)
+            binding.genero.setText(formulario.genero)
+            binding.altura.setText(formulario.altura)
+            binding.peso.setText(formulario.peso)
+            binding.civil.setText(formulario.civil)
+            binding.pais.setText(formulario.pais)
+            binding.fuma.setText(formulario.fuma)
+            binding.bebe.setText(formulario.bebe)
+            binding.alergia.setText(formulario.alergia)
+            binding.medicamento.setText(formulario.medicamento)
+            binding.historico.setText(formulario.historico)
+        }
     }
 }
