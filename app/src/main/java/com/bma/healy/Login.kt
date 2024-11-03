@@ -10,20 +10,14 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.bma.healy.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
-
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 
 class Login : Fragment() {
 
     private val autenticador by lazy {
         FirebaseAuth.getInstance()
     }
-
-    private val binding by lazy {
-        FragmentLoginBinding.inflate(layoutInflater)
-    }
-
 
     private lateinit var linkLogin: TextView
     private lateinit var linkEsqueceuSenha: TextView
@@ -73,13 +67,27 @@ class Login : Fragment() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
 
-                    val intent = Intent(context, Menu::class.java)
-                    startActivity(intent)
+                    val user = autenticador.currentUser
+                    if (user != null) {
+
+                        val intent = Intent(requireActivity(), Menu::class.java)
+                        startActivity(intent)
+                    } else {
+
+                        Toast.makeText(context, "Erro ao fazer login", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
 
-                    Toast.makeText(context, "Falha no login", Toast.LENGTH_SHORT).show()
+                    val exception = task.exception
+                    if (exception is FirebaseAuthInvalidCredentialsException) {
+
+                        Toast.makeText(context, "Email ou senha inválidos", Toast.LENGTH_SHORT)
+                            .show()
+                    } else {
+
+                        Toast.makeText(context, "Esta conta não existe", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
     }
 }
-

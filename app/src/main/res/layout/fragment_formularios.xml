@@ -567,7 +567,7 @@
                             android:layout_marginTop="10dp">
 
                             <EditText
-                                android:id="@+id/hsitorico"
+                                android:id="@+id/historico"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -582,7 +582,7 @@
                                 android:textSize="14sp" />
 
                             <TextView
-                                android:id="@+id/hsitoricoEscrita"
+                                android:id="@+id/historicoEscrita"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="35dp"

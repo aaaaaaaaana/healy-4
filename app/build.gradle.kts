@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -59,5 +60,20 @@ dependencies {
     implementation(libs.circleimageview)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth.ktx)
-
+    implementation(libs.firebase.bom.v3351)
+    implementation(platform("com.google.firebase:firebase-bom:33.4.0"))
+    implementation(libs.firebase.auth)
+    implementation("com.google.firebase:firebase-auth:22.1.0")
+    implementation(libs.google.firebase.auth.ktx)
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation(libs.firebase.firestore.ktx)
+    implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation(libs.firebase.storage.ktx)
+    implementation("com.google.firebase:firebase-storage-ktx")
+    implementation(libs.androidx.datastore.preferences)
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation(libs.gson)
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation(libs.firebase.bom.v3200)
+    implementation(platform("com.google.firebase:firebase-bom:32.0.0"))
 }

@@ -10,15 +10,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.Firebase
-import com.google.firebase.auth.auth
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 
 class Cadastro : Fragment() {
 
-
-    private val autenticador by lazy {
-        Firebase.auth
+    private val autenticacao by lazy {
+        FirebaseAuth.getInstance()
     }
-
 
     private lateinit var linkCadastro: TextView
     private lateinit var botaoCadastro: Button
@@ -28,10 +27,8 @@ class Cadastro : Fragment() {
     private lateinit var senha: EditText
     private lateinit var confirmaSenha: EditText
 
-
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_cadastro, container, false)
@@ -59,20 +56,22 @@ class Cadastro : Fragment() {
             val senha = senha.text.toString().trim()
             val confirmaSenha = confirmaSenha.text.toString().trim()
 
-            if (email.isEmpty() || nome.isEmpty() || cpf.isEmpty() || senha.isEmpty() || confirmaSenha.isEmpty()) {
+            if (email.isEmpty() || senha.isEmpty() || confirmaSenha.isEmpty() || nome.isEmpty() || cpf.isEmpty()) {
                 Toast.makeText(context, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
-            } else if (senha != confirmaSenha) {
-                Toast.makeText(context, "Senhas não coincidem", Toast.LENGTH_SHORT).show()
-            } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                Toast.makeText(context, "Email inválido", Toast.LENGTH_SHORT).show()
-            } else {
-                cadastrarUsuario(email, senha, nome, cpf)
+                return@setOnClickListener
             }
+
+            if (senha != confirmaSenha) {
+                Toast.makeText(context, "As senhas não coincidem", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            cadastrarUsuario(email, nome, cpf, senha)
         }
     }
 
-    private fun cadastrarUsuario(email: String, senha: String, nome: String, cpf: String) {
-        autenticador.createUserWithEmailAndPassword(email, senha)
+    private fun cadastrarUsuario(email: String, nome: String, cpf: String, senha: String) {
+        autenticacao.createUserWithEmailAndPassword(email, senha)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
 
@@ -80,13 +79,12 @@ class Cadastro : Fragment() {
                     if (user != null) {
 
                         user.updateProfile(
-                            com.google.firebase.auth.UserProfileChangeRequest.Builder()
+                            UserProfileChangeRequest.Builder()
                                 .setDisplayName(nome)
                                 .build()
                         )
                             .addOnCompleteListener { profileTask ->
                                 if (profileTask.isSuccessful) {
-
                                     Toast.makeText(
                                         context,
                                         "Usuário cadastrado!",
@@ -95,7 +93,6 @@ class Cadastro : Fragment() {
 
                                     (activity as MainActivity).showFragment(Login())
                                 } else {
-
                                     Toast.makeText(
                                         context,
                                         "Erro ao atualizar o perfil",
@@ -104,7 +101,6 @@ class Cadastro : Fragment() {
                                 }
                             }
                             .addOnFailureListener { exception ->
-
                                 Toast.makeText(
                                     context,
                                     "Erro ao atualizar o perfil: ${exception.message}",
@@ -112,17 +108,9 @@ class Cadastro : Fragment() {
                                 ).show()
                             }
                     }
-                } else {
-
-                    Toast.makeText(
-                        context,
-                        "Falha no cadastro: ${task.exception?.message}",
-                        Toast.LENGTH_SHORT
-                    ).show()
                 }
             }
             .addOnFailureListener { exception ->
-
                 Toast.makeText(
                     context,
                     "Falha no cadastro: ${exception.message}",

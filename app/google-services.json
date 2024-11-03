@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "577297753294",
+    "project_id": "healy4-5def6",
+    "storage_bucket": "healy4-5def6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577297753294:android:7c2545a4d9841ab19f1c9f",
+        "android_client_info": {
+          "package_name": "com.bma.healy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtvZoeO5Dj7hmODttL-mkItVMhsh5srR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
