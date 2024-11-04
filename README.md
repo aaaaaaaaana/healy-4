@@ -11,13 +11,10 @@
     RM: 552295 Turma: 2TDSPF Nome: Matheus Felipe Camarinha Duarte
     RM: 98672  Turma: 2TDSPF Nome: Mirelly Ribeiro Azevedo
 
-
 <br>
 <br>
-
 
 # Sobre o Projeto
-<br> 
 Healy é a plataforma digital que facilita a comunicação entre profissionais de saúde e pacientes, colocando o controle da sua saúde em suas mãos. Através de um ambiente intuitivo e seguro, você acessa seus dados médicos, acompanha seus exames e recebe informações claras sobre os custos dos serviços médicos. Com Healy, profissionais têm acesso rápido e completo aos dados dos pacientes, impulsionando decisões mais precisas e eficientes. Healy: Sua saúde, em foco, com tecnologia que conecta!
 
 <br>
