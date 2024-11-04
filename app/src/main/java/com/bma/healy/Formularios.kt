@@ -1,151 +1,98 @@
 package com.bma.healy
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.bma.healy.bancodedados.FormularioDAO
+import com.bma.healy.databinding.FragmentFormulariosBinding
 import com.bma.healy.model.Formulario
-import com.google.gson.Gson
-import com.google.gson.JsonSyntaxException
-import com.google.gson.reflect.TypeToken
-import kotlinx.coroutines.launch
-import java.lang.reflect.Type
 import java.text.SimpleDateFormat
 import java.util.Locale
 
 class Formularios : Fragment() {
 
-    val DATASTORE_NAME = "formulario_datastore"
-    val FORMULARIO_KEY = stringPreferencesKey("formulario_data")
-    val FORMULARIO_DADOS_KEY = stringPreferencesKey("formulario_dados")
-
-    private lateinit var idade: EditText
-    private lateinit var genero: EditText
-    private lateinit var altura: EditText
-    private lateinit var peso: EditText
-    private lateinit var civil: EditText
-    private lateinit var pais: EditText
-    private lateinit var fuma: EditText
-    private lateinit var bebe: EditText
-    private lateinit var alergia: EditText
-    private lateinit var medicamento: EditText
-    private lateinit var historico: EditText
-    private lateinit var registrar: Button
-
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var formularioAdapter: FormularioAdapter
-
-    private val Context.dataStore by preferencesDataStore(
-        name = DATASTORE_NAME
-    )
+    private lateinit var binding: FragmentFormulariosBinding
+    private lateinit var formularioDAO: FormularioDAO
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_formularios, container, false)
+        binding = FragmentFormulariosBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        formularioDAO = FormularioDAO(requireContext())
 
-        idade = view.findViewById(R.id.idade)
-        genero = view.findViewById(R.id.genero)
-        altura = view.findViewById(R.id.altura)
-        peso = view.findViewById(R.id.peso)
-        civil = view.findViewById(R.id.civil)
-        pais = view.findViewById(R.id.pais)
-        fuma = view.findViewById(R.id.fuma)
-        bebe = view.findViewById(R.id.bebe)
-        alergia = view.findViewById(R.id.alergia)
-        medicamento = view.findViewById(R.id.medicamento)
-        historico = view.findViewById(R.id.historico)
-        registrar = view.findViewById(R.id.registrar)
-        recyclerView = view.findViewById(R.id.recyclerView)
+        binding.registrar.setOnClickListener {
+            val idade = binding.idade.text.toString()
+            val genero = binding.genero.text.toString()
+            val altura = binding.altura.text.toString()
+            val peso = binding.peso.text.toString()
+            val civil = binding.civil.text.toString()
+            val pais = binding.pais.text.toString()
+            val fuma = binding.fuma.text.toString()
+            val bebe = binding.bebe.text.toString()
+            val alergia = binding.alergia.text.toString()
+            val medicamento = binding.medicamento.text.toString()
+            val historico = binding.historico.text.toString()
 
-        formularioAdapter = FormularioAdapter()
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = formularioAdapter
+            val data = SimpleDateFormat(
+                "dd/MM/yyyy",
+                Locale.getDefault()
+            ).format(System.currentTimeMillis())
 
-        loadFormularios()
 
-        registrar.setOnClickListener {
-            val data = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(System.currentTimeMillis())
-            val formulario = Formulario(
-                idade.text.toString(),
-                genero.text.toString(),
-                altura.text.toString(),
-                peso.text.toString(),
-                civil.text.toString(),
-                pais.text.toString(),
-                fuma.text.toString(),
-                bebe.text.toString(),
-                alergia.text.toString(),
-                medicamento.text.toString(),
-                historico.text.toString(),
-                data
+            val novoFormulario = Formulario(
+                idade = idade,
+                genero = genero,
+                altura = altura,
+                peso = peso,
+                civil = civil,
+                pais = pais,
+                fuma = fuma,
+                bebe = bebe,
+                alergia = alergia,
+                medicamento = medicamento,
+                historico = historico,
+                data = data
             )
 
-            idade.setText("")
-            genero.setText("")
-            altura.setText("")
-            peso.setText("")
-            civil.setText("")
-            pais.setText("")
-            fuma.setText("")
-            bebe.setText("")
-            alergia.setText("")
-            medicamento.setText("")
-            historico.setText("")
+            if (formularioDAO.salvar(novoFormulario)) {
+                Toast.makeText(
+                    requireContext(),
+                    "Formulario salvo com sucesso!",
+                    Toast.LENGTH_SHORT
+                ).show()
 
-            saveFormulario(formulario)
-            Toast.makeText(context, "Formulário salvo!", Toast.LENGTH_SHORT).show()
-        }
-    }
+                limparCampos()
 
-    private fun saveFormulario(formulario: Formulario) {
-        lifecycleScope.launch {
-            requireContext().dataStore.edit { preferences ->
-                val gson = Gson()
-                var formularios: MutableList<Formulario> =
-                    try {
-                        gson.fromJson(preferences[FORMULARIO_DADOS_KEY], object : TypeToken<List<Formulario>>() {}.type)
-                    } catch (e: JsonSyntaxException) {
-                        mutableListOf()
-                    }
-                formularios.add(formulario)
-                val json = gson.toJson(formularios)
-                preferences[FORMULARIO_DADOS_KEY] = json
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Erro ao salvar formulario.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
 
-    private fun loadFormularios() {
-        lifecycleScope.launch {
-            requireContext().dataStore.data.collect { preferences ->
-                val json = preferences[FORMULARIO_DADOS_KEY]
-                if (json != null) {
-                    val gson = Gson()
-                    val type: Type = object : TypeToken<List<Formulario>>() {}.type
-                    val formularios: List<Formulario> = try {
-                        gson.fromJson(json, type)
-                    } catch (e: JsonSyntaxException) {
-                        emptyList()
-                    }
-                    formularioAdapter.updateFormularios(formularios)
-                }
-            }
-        }
+    private fun limparCampos() {
+        binding.idade.setText("")
+        binding.genero.setText("")
+        binding.altura.setText("")
+        binding.peso.setText("")
+        binding.civil.setText("")
+        binding.pais.setText("")
+        binding.fuma.setText("")
+        binding.bebe.setText("")
+        binding.alergia.setText("")
+        binding.medicamento.setText("")
+        binding.historico.setText("")
     }
 }

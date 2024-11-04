@@ -43,6 +43,17 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
+                <TextView
+                    android:id="@+id/data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="data"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -62,7 +73,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/idade"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -105,7 +116,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/genero"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -154,7 +165,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/altura"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -195,7 +206,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/peso"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -245,7 +256,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/civil"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -287,7 +298,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/pais"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -335,7 +346,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/fuma"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -387,7 +398,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/bebe"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -438,7 +449,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/alergia"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -489,7 +500,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/medicamento"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -540,7 +551,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/historico"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -571,14 +582,7 @@
 
                 </LinearLayout>
 
-                <Button
-                    android:id="@+id/registrar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginBottom="25dp"
-                    android:text="Registrar" />
+
 
             </LinearLayout>
 
